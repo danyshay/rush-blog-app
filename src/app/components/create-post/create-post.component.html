@@ -1,0 +1,90 @@
+
+<div class="margin-topper"></div>
+
+  <div class="container">
+
+      <div class="row">
+        <div class="col col-md-9">
+  
+          <div class="backg-form">
+            <form class="publish-post-form">
+              <div class="form-group">
+                <!-- <label for="post_title">New Post</label> -->
+                <input type="text" [(ngModel)]="post_title" name="post_title" class="form-control" placeholder="My Awesome New Post" id="post_title">
+                <small class="form-text text-muted">Unique Title for Post</small>
+              </div>
+  
+              <div class="form-group">
+                <!-- <label for="post_content">Content</label> -->
+                <!-- <textarea [(ngModel)]="post_content" name="post_content" id="post_content" class="form-control" cols="30" rows="10"></textarea> -->
+  
+                <quill-editor [(ngModel)]="post_content" name="post_content" id="post_content" class="quill-writer"></quill-editor>
+              </div>
+  
+            </form>
+  
+          </div>
+  
+          <!-- 
+          <div class="card">
+            <div class="card-body">
+              <h5 class="card-title">Create Post</h5>
+  
+              <form (submit)="createBlogPost()">
+                <div class="form-group">
+                  <label for="post_title">Title</label>
+                  <input type="text" [(ngModel)]="post_title" name="post_title" class="form-control" placeholder="Enter Title" id="post_title">
+                  <small class="form-text text-muted">Unique Title for Post</small>
+                </div>
+  
+                <div class="form-group">
+                  <label for="post_content">Content</label>
+                  <textarea [(ngModel)]="post_content" name="post_content" id="post_content" class="form-control" cols="30" rows="10"></textarea>
+  
+                  <quill-editor [(ngModel)]="post_content" name="post_content" id="post_content"></quill-editor>
+                </div>
+                <button type="submit" class="btn btn-primary btn-block">Submit</button>
+              </form>
+  
+  
+            </div>
+          </div> -->
+        </div>
+        <div class="col col-md-3">
+  
+          <div class="post-meta-crud">
+  
+            <div class="post-publishing-tool">
+              <h5>Publish Tools</h5>
+              <ul>
+  
+                <li>Status:
+                  <span id="post-status-select">Draft</span>
+                  <!-- <span id="post-status-select">
+                    <select name="" id="">
+                        <option value="">Draft</option>
+                    </select>
+                  </span> -->
+                </li>
+                <li>Visilibity:
+                  <span id="post-visibility-status">
+                    <select name="publish_status" id="" ([ngModel])="publish_status">
+                      <option  [ngValue]="public">Public</option>
+                      <option [ngValue]="private">Private</option>
+                    </select>
+                  </span>
+                </li>
+  
+              </ul>
+              <button type="submit" (click)="createPost()" class="btn btn-primary btn-block">Submit</button>
+            </div>
+  
+  
+          </div>
+  
+        </div>
+      </div>
+  
+    </div>
+  
+  
